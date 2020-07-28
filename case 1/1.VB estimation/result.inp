@@ -1,0 +1,189 @@
+[TITLE]
+ EPANET Example Network 1 
+A simple example of modeling chlorine decay. Both bulk and 
+wall reactions are included.  
+
+[JUNCTIONS]
+ N1                                    0.0000
+ N2                                    0.0000
+ N3                                    0.0000
+ N4                                    0.0000
+ N5                                    0.0000
+ N6                                    0.0000
+ N7                                    0.0000
+ N8                                    0.0000
+
+[RESERVOIRS]
+ N9                                   50.0000 
+
+[TANKS]
+
+[PIPES]
+ L2                              N1                              N2                                  500.0000     200.0000     100.0000       0.0000 
+ L3                              N2                              N3                                  500.0000     200.0000     100.0000       0.0000 
+ L7                              N4                              N5                                  500.0000     100.0000     100.0000       0.0000 
+ L8                              N5                              N6                                  500.0000     100.0000     100.0000       0.0000 
+ L11                             N7                              N8                                  500.0000     100.0000     100.0000       0.0000 
+ L4                              N1                              N4                                  500.0000     150.0000     100.0000       0.0000 
+ L5                              N2                              N5                                  500.0000     200.0000     100.0000       0.0000 
+ L6                              N3                              N6                                  500.0000     100.0000     100.0000       0.0000 
+ L9                              N4                              N7                                  500.0000     100.0000     100.0000       0.0000 
+ L10                             N5                              N8                                  500.0000     150.0000     100.0000       0.0000 
+ L1                              N9                              N1                                  800.0000     300.0000     100.0000       0.0000 
+
+[PUMPS]
+
+[VALVES]
+
+[DEMANDS]
+ N1                                    3.977626 
+ N2                                    5.469083 
+ N3                                   12.510466 
+ N4                                    1.684508 
+ N5                                    6.153512 
+ N6                                    6.910089 
+ N7                                    8.840612 
+ N8                                   12.852622 
+
+[EMITTERS]
+
+[STATUS]
+
+[PATTERNS]
+
+[CURVES]
+ 1                                  1500.0000     250.0000
+
+[CONTROLS]
+
+[QUALITY]
+ N1                                    0.500000
+ N2                                    0.500000
+ N3                                    0.500000
+ N4                                    0.500000
+ N5                                    0.500000
+ N6                                    0.500000
+ N7                                    0.500000
+ N8                                    0.500000
+ N9                                    1.000000
+
+[SOURCES]
+
+[MIXING]
+
+[REACTIONS]
+ ORDER  BULK            1.00
+ ORDER  WALL            1
+ ORDER  TANK            1.00
+ GLOBAL BULK            -0.500000
+ GLOBAL WALL            -1.000000
+
+[ENERGY]
+ GLOBAL EFFIC        75.0000
+ DEMAND CHARGE       0.0000
+
+[TIMES]
+ DURATION            0:00:00
+ HYDRAULIC TIMESTEP  1:00:00
+ QUALITY TIMESTEP    1:00:00
+ REPORT TIMESTEP     1:00:00
+ REPORT START        0:00:00
+ PATTERN TIMESTEP    1:00:00
+ PATTERN START       0:00:00
+ RULE TIMESTEP       0:06:00
+ START CLOCKTIME     0:00:00
+ STATISTIC           NONE
+
+[OPTIONS]
+ UNITS               LPS
+ PRESSURE            METERS
+ HEADLOSS            H-W
+ UNBALANCED          CONTINUE 10
+ QUALITY             NONE
+ DEMAND MULTIPLIER   1.0000
+ EMITTER EXPONENT    0.5000
+ VISCOSITY           1.000000
+ DIFFUSIVITY         1.000000
+ SPECIFIC GRAVITY    1.000000
+ TRIALS              40
+ ACCURACY            0.00100000
+ TOLERANCE           0.01000000
+ CHECKFREQ           2
+ MAXCHECK            10
+ DAMPLIMIT           0.00000000
+
+[REPORT]
+ PAGESIZE            0
+ STATUS              YES
+ SUMMARY             NO
+ ENERGY              NO
+ NODES               NONE
+ LINKS               NONE
+ Elevation           NO
+ Demand              PRECISION 2
+ Head                PRECISION 2
+ Pressure            PRECISION 2
+ Quality             NO
+ Length              NO
+ Diameter            NO
+ Flow                PRECISION 2
+ Velocity            PRECISION 2
+ Headloss            PRECISION 2
+ Quality             NO
+ State               NO
+ Setting             NO
+ Reaction            NO
+[TAGS]
+
+[RULES]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[COORDINATES]
+;Node            	X-Coord         	Y-Coord
+ N1              	30.00           	70.00           
+ N2              	50.00           	70.00           
+ N3              	70.00           	70.00           
+ N4              	30.00           	40.00           
+ N5              	50.00           	40.00           
+ N6              	70.00           	40.00           
+ N7              	30.00           	10.00           
+ N8              	50.00           	10.00           
+ N9              	10.00           	70.00           
+
+[VERTICES]
+;Link            	X-Coord         	Y-Coord
+
+[LABELS]
+;X-Coord           Y-Coord          Label & Anchor Node
+ 6.99             73.63            "Source"                 
+
+[BACKDROP]
+ DIMENSIONS     	7.00            	6.00            	73.00           	94.00           
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+
+[END]

@@ -1,0 +1,5 @@
+SCALE_Predict=2  #absult value,这个就是该概念，用来调整相对大小
+SCALE_Measured=5
+FLOW STD:5
+PRESSURE STD:4
+Sensor_T=0.98

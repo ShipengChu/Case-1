@@ -1,0 +1,209 @@
+[TITLE]
+ EPANET Example Network 1
+A simple example of modeling chlorine decay. Both bulk and
+wall reactions are included. 
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern         
+ N1              	0           	3           	                	;
+ N2              	0           	4           	                	;
+ N3              	0           	11          	                	;
+ N4              	0           	1           	                	;
+ N5              	0           	7           	                	;
+ N6              	0           	6           	                	;
+ N7              	0           	7           	                	;
+ N8              	0           	11          	                	;
+
+[RESERVOIRS]
+;ID              	Head        	Pattern         
+ N9              	50          	                	;
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ L2              	N1              	N2              	500         	200         	100         	0           	Open  	;
+ L3              	N2              	N3              	500         	200         	100         	0           	Open  	;
+ L7              	N4              	N5              	500         	100         	100         	0           	Open  	;
+ L8              	N5              	N6              	500         	100         	100         	0           	Open  	;
+ L11             	N7              	N8              	500         	100         	100         	0           	Open  	;
+ L4              	N1              	N4              	500         	150         	100         	0           	Open  	;
+ L5              	N2              	N5              	500         	200         	100         	0           	Open  	;
+ L6              	N3              	N6              	500         	100         	100         	0           	Open  	;
+ L9              	N4              	N7              	500         	100         	100         	0           	Open  	;
+ L10             	N5              	N8              	500         	150         	100         	0           	Open  	;
+ L1              	N9              	N1              	800         	300         	100         	0           	Open  	;
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss   
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+
+[PATTERNS]
+;ID              	Multipliers
+
+[CURVES]
+;ID              	X-Value     	Y-Value
+;PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: PUMP: Pump Curve for Pump 9
+ 1               	1500        	250         
+
+[CONTROLS]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[RULES]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ENERGY]
+ Global Efficiency  	75
+ Global Price       	0.0
+ Demand Charge      	0.0
+
+[EMITTERS]
+;Junction        	Coefficient
+
+[QUALITY]
+;Node            	InitQual
+ N1              	0.5
+ N2              	0.5
+ N3              	0.5
+ N4              	0.5
+ N5              	0.5
+ N6              	0.5
+ N7              	0.5
+ N8              	0.5
+ N9              	1.0
+
+[SOURCES]
+;Node            	Type        	Quality     	Pattern
+
+[REACTIONS]
+;Type     	Pipe/Tank       	Coefficient
+
+
+[REACTIONS]
+ Order Bulk            	1
+ Order Tank            	1
+ Order Wall            	1
+ Global Bulk           	-.5
+ Global Wall           	-1
+ Limiting Potential    	0.0
+ Roughness Correlation 	0.0
+
+[MIXING]
+;Tank            	Model
+
+[TIMES]
+ Duration           	0:00 
+ Hydraulic Timestep 	1:00 
+ Quality Timestep   	1:00 
+ Pattern Timestep   	1:00 
+ Pattern Start      	0:00 
+ Report Timestep    	1:00 
+ Report Start       	0:00 
+ Start ClockTime    	0
+ Statistic          	NONE
+
+[REPORT]
+ Status             	Yes
+ Summary            	No
+ Page               	0
+
+[OPTIONS]
+ Units              	LPS
+ Headloss           	H-W
+ Specific Gravity   	1.0
+ Viscosity          	1.0
+ Trials             	40
+ Accuracy           	0.001
+ CHECKFREQ          	2
+ MAXCHECK           	10
+ DAMPLIMIT          	0
+ Unbalanced         	Continue 10
+ Pattern            	1
+ Demand Multiplier  	1.0
+ Emitter Exponent   	0.5
+ Quality            	Chlorine mg/L
+ Diffusivity        	1.0
+ Tolerance          	0.01
+
+[COORDINATES]
+;Node            	X-Coord         	Y-Coord
+ N1              	30.00           	70.00           
+ N2              	50.00           	70.00           
+ N3              	70.00           	70.00           
+ N4              	30.00           	40.00           
+ N5              	50.00           	40.00           
+ N6              	70.00           	40.00           
+ N7              	30.00           	10.00           
+ N8              	50.00           	10.00           
+ N9              	10.00           	70.00           
+
+[VERTICES]
+;Link            	X-Coord         	Y-Coord
+
+[LABELS]
+;X-Coord           Y-Coord          Label & Anchor Node
+ 6.99             73.63            "Source"                 
+
+[BACKDROP]
+ DIMENSIONS     	7.00            	6.00            	73.00           	94.00           
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+[END]
